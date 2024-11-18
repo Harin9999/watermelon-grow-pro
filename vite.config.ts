@@ -22,7 +22,9 @@ export default defineConfig({
         pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn']
       }
     },
-    copyPublicDir: true
+    copyPublicDir: true,
+    outDir: 'dist',
+    assetsDir: 'assets'
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'lucide-react']
