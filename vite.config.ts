@@ -4,6 +4,11 @@ import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src')
+    }
+  },
   build: {
     rollupOptions: {
       output: {
@@ -18,10 +23,10 @@ export default defineConfig({
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn']
+        drop_debugger: true
       }
     },
+    sourcemap: false,
     copyPublicDir: true,
     outDir: 'dist',
     assetsDir: 'assets'
